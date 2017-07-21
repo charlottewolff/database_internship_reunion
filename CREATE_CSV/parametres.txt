@@ -1,0 +1,12 @@
+-------> "Index name"
+ndvi
+-------> "Starting date" 
+20161219
+-------> "Stopping date" 
+20170402
+-------> "Path to DATA folder"
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
+-------> "Path to out csv file"
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
+-------> "Path to points shapefile"
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA

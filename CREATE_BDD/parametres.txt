@@ -1,0 +1,14 @@
+-------> lonmin:
+47.366
+-------> lonmax:
+47.931
+-------> latmin:
+-22.404
+-------> latmax:
+-23.239
+-------> Tiles:(ex. T40KCB,T40KTB) (None if no specific tiles wanted)
+T38KQV,T38KQA
+-------> WaterMask
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA/waterMask/lim_mada_osm.shp
+-------> DATA Path
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
