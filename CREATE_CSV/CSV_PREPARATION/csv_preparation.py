@@ -52,6 +52,7 @@ def createCSV(indexName, DATA_path, out, Bdate,Edate, pointsFile, water):
                 tile = feature.GetField("code_site")
                 previousWeek.append(tile)
         
+        ### write in csv file
         findexName = open(out, 'w')
         findexName.write(str(previousWeek)[1:-1] + '\n')
         ###        
@@ -69,6 +70,7 @@ def createCSV(indexName, DATA_path, out, Bdate,Edate, pointsFile, water):
             for feature in pointLayer:
                 tile = feature.GetField("tuile")
                 listDate = glob.glob(DATA_path + '/' + indexName + '/' + tile + "/*_" + indexName + "*.tif") 
+                ### ordered by dates
                 listDate.sort()
                 for title in listDate:
                     if '_MEAN' not in title:
@@ -100,6 +102,7 @@ def createCSV(indexName, DATA_path, out, Bdate,Edate, pointsFile, water):
                 for feature in pointsLayer:
                     tile = feature.GetField("tuile")
                     listDate = glob.glob(DATA_path + '/' + indexName + '/' + tile + "/*_" + indexName + "*.tif")
+                    ### ordered by dates                     
                     listDate.sort()
                     for title in listDate:
                         if '_MEAN' not in title:
@@ -111,10 +114,11 @@ def createCSV(indexName, DATA_path, out, Bdate,Edate, pointsFile, water):
                                 print 'Le masque de nuage est : ', maskCLD
                                 maskWTR = water +  '/' + tile[1:] + '_WTRMask.tif'
                                 indexName_value = fct.find_indexName(title, point, maskCLD, maskWTR)
-                                #if point not covered by clouds                                
+                                # if point not covered by clouds                                
                                 if indexName_value != None:                                    
                                     print '---  SITE : ', feature.GetField("code_site"), '  --- DATE : ', str(convertDate), ' (MONDAY) --- VALUE : ', indexName_value, ' ---'
                                     week[c] = indexName_value
+                                ### if covered by clouds >> keep previous value
                                 else:
                                     print '---  SITE : ', feature.GetField("code_site"), '  --- DATE : ', str(convertDate), ' (MONDAY) ---   CLOUD   ---' 
                                 break

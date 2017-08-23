@@ -29,6 +29,7 @@ def BDD_wtrMask(waterMask, tileList, dataPath):
         interName = 'extracted_' + Name + '.shp'
         interName2 = 'extracted_' + Name + '2.shp'
         finalName = Name + '_WTRMask.tif'
+        finalName2 = Name + '_WTRMask2.tif'
         #-- tile extraction        
         command1 = 'ogr2ogr -f "ESRI Shapefile" ' + interName + ' -where "name = ' + "'" + Name + "'" + '" ' +  tiles
         os.system(command1)
@@ -39,10 +40,16 @@ def BDD_wtrMask(waterMask, tileList, dataPath):
         CLDmaskP = glob.glob(dataPath + '/rawData/' + t + '/*')
         CLDmask = glob.glob(CLDmaskP[0] + '/*_Sen2corMask.tif')
         finalPath = dataPath + '/waterMask' + '/' + finalName
-        shutil.copy2(CLDmask[0], finalPath)
-        command3 = 'gdal_rasterize -a land -l ' + interName2[:-4] + ' ' + interName2 + ' ' + finalPath
-        print command3        
-        os.system(command3)
+        finalPath2 = dataPath + '/waterMask' + '/' + finalName2
+        shutil.copy2(CLDmask[0], finalPath2)
+        
+        #remove clouds from image
+        command3 = 'otbcli_BandMath -il ' + finalPath2 + ' -out ' + finalPath + ' -exp "im1b1 > 0 ? 0 : 0"'        
+        os.system(command3)        
+        os.remove(finalPath2)        
+        
+        command4 = 'gdal_rasterize -a land -l ' + interName2[:-4] + ' ' + interName2 + ' ' + finalPath      
+        os.system(command4)
         #-- remove unused shp
         extracted = glob.glob('./extracted*')
         for shp in extracted:

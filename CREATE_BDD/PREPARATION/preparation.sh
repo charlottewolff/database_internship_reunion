@@ -51,7 +51,7 @@ INDEX_computation(){
 
 
 
-######################    FONCTIONS DEFINITION
+######################    FONCTIONS DEFINITION    ######################
 parameters() {
 #Process to read parameters information
     line2=2

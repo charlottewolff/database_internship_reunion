@@ -1,12 +1,24 @@
 List of packages to install 
 
 
-- Qgis and its libraries (gdal, ogr)
+***** Qgis and its libraries (gdal, ogr)
+sudo apt-get install qgis
 
-- Orfeo Toolbox library (to use it with command lines)
+***** Orfeo Toolbox library (to use it with command lines)
+sudo aptitude install add-apt-repository
+sudo apt-add-repository ppa:ubuntugis/ubuntugis-unstable
+sudo aptitude install otb-bin otb-bin-qt python-otb
 
-- Anaconda2
+***** Anaconda2
+https://www.continuum.io/downloads
+bash Anaconda2-4.3.1-Linux-x86_64.sh 
 
-- Sen2cor (once anaconda is downloaded)	http://step.esa.int/thirdparties/sen2cor/2.3.1/[L2A-SUM]%20S2-PDGS-MPC-L2A-SUM%20[2.3.0].pdf
+***** Sen2cor (once anaconda is downloaded)
+http://step.esa.int/thirdparties/sen2cor/2.3.1/[L2A-SUM]%20S2-PDGS-MPC-L2A-SUM%20[2.3.0].pdf  (p.33)
 
--Create an account on PEPS to download the 1C-Sentinel-2 images 
+***** Create an account on PEPS to download the 1C Sentinel-2 images 
+https://peps-mission.cnes.fr/en/peps-0
+
+***** rasterstats
+sudo apt-get install python-numpy python-gdal
+pip install rasterstats

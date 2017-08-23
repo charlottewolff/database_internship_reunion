@@ -7,6 +7,6 @@ ndvi
 -------> "Path to DATA folder"
 /home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
 -------> "Path to out csv file"
-/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA/ndvi.csv
 -------> "Path to points shapefile"
-/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA
+/home/seas-oi/Bureau/PROPRE/codes_propres_wgs84_tel_masque_Perosion2/DATA/points.shp

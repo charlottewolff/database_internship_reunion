@@ -16,7 +16,7 @@ from rasterstats import zonal_stats
 
 
 def removeMeanFile(indexName,DATA_path):
-    """Remove the mean files created
+    """Remove the created mean files 
     indexName : name of the index where we want to remove the mean files
     DATA_path : path to the data folder    
     """
